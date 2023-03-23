@@ -1,5 +1,228 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: 0;
+	box-sizing: border-box;
+}
+html {
+	/* 62.5% of 16px browser font size is 10px */
+	font-size: 62.5%;
+}
+body {
+	font-family: "League Spartan", sans-serif;
+	position: relative;
+}
+main {
+	position: absolute;
+	padding: 0 2.5rem;
+	background-image: url(./images/bg-pattern-top-desktop.svg),
+		url(./images/bg-pattern-bottom-desktop.svg);
+	background-repeat: no-repeat, no-repeat;
+	background-position: top left, bottom right;
+	/* height: 100vh; */
+	width: 100%;
+}
+
+/* HEADER */
+.header {
+	margin: 7.1rem auto;
+	max-width: 111rem;
+	display: grid;
+	grid-template-columns: 1fr 1.21fr;
+	gap: 12.5rem;
+}
+
+.heading {
+	color: #512051;
+	font-size: 5.6rem;
+	letter-spacing: -2px;
+	margin-bottom: 1.6rem;
+}
+.header-description {
+	color: #927b91;
+	font-size: 1.9rem;
+	letter-spacing: -0.6px;
+	font-weight: 500;
+	line-height: 1.3;
+}
+
+.reviews {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.6rem;
+	align-content: center;
+}
+.review-description {
+	color: #512051;
+	font-size: 1.7rem;
+	font-weight: 700;
+}
+.stars-icons {
+	display: flex;
+	gap: 0.85rem;
+}
+.rate {
+	display: grid;
+	align-items: center;
+	grid-template-columns: auto 1fr;
+	background-color: #f7f2f7;
+	padding: 2rem 2.5rem 2rem 3.2rem;
+	gap: 3.245rem;
+	border-radius: 8px;
+}
+
+.rate--start {
+	justify-self: start;
+}
+.rate--center {
+	justify-self: center;
+}
+.rate--end {
+	justify-self: end;
+}
+
+/* TESTIOMONIALS */
+
+.testimonials-section {
+	max-width: 111rem;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 26.6rem;
+	gap: 3rem;
+}
+.testimonial {
+	background-color: #512051;
+	padding: 4.3rem 3.2rem 3.5rem 3.2rem;
+	border-radius: 8px;
+}
+.testimonial-name {
+	color: #fff;
+	font-size: 1.7rem;
+	font-weight: 700;
+}
+.buyer {
+	color: #ee69a4;
+	font-size: 1.7rem;
+	font-weight: 400;
+}
+.testimonial-text {
+	font-size: 1.7rem;
+	color: #fff;
+	letter-spacing: -0.3px;
+	line-height: 1.3;
+}
+figure img {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+}
+.customer-info {
+	display: flex;
+	align-items: center;
+	gap: 2.3rem;
+	margin-bottom: 3.2rem;
+}
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+.testimonial-1 {
+	align-self: self-start;
+}
+.testimonial-2 {
+	align-self: center;
+}
+.testimonial-3 {
+	align-self: end;
+}
+.footer {
+	margin: 1.5rem auto 0 auto;
+	max-width: 111rem;
+	background-color: #f7f2f7;
+	padding: 1.5rem;
+	text-align: center;
+}
+.footer p {
+	font-size: 1.6rem;
+	color: #512051;
+}
+.footer p a:link {
+	color: #512051;
+}
+.footer span {
+	font-size: 1.7rem;
+	color: #ee69a4;
+	font-weight: 500;
+}
+
+/* RESPONSIVE FOR 944PX */
+
+@media (max-width: 59em) {
+	main {
+		padding: 0 4rem;
+	}
+	.header {
+		gap: 10rem;
+	}
+	.testimonial-1,
+	.testimonial-2,
+	.testimonial-3 {
+		align-self: stretch;
+	}
+	.testimonials-section {
+		grid-template-rows: max-content;
+	}
+	.footer {
+		margin-bottom: 10rem;
+	}
+}
+
+/* RESPONSIVE FOR 800PX */
+
+@media (max-width: 50rem) {
+	.header {
+		grid-template-columns: 1fr;
+		gap: 4rem;
+	}
+	.heading,
+	.header-description {
+		text-align: center;
+	}
+	.rate--start {
+		justify-self: stretch;
+	}
+	.rate--center {
+		justify-self: stretch;
+	}
+	.rate--end {
+		justify-self: stretch;
+	}
+	.testimonials-section {
+		grid-template-columns: 1fr;
+		gap: 1.6rem;
+	}
+}
+
+/* RESPONSIVE FOR 495PX */
+
+@media (max-width: 31rem) {
+	.rate {
+		grid-template-columns: 1fr;
+		text-align: center;
+		gap: 1.6rem;
+	}
+	.reviews {
+		max-width: 100%;
+		justify-items: center;
+	}
+	.stars-icons {
+		justify-content: center;
+	}
+	main {
+		background-image: url(./images/bg-pattern-top-mobile.svg),
+			url(./images/bg-pattern-bottom-mobile.svg);
+		background-repeat: no-repeat, no-repeat;
+		background-position: top left, bottom right;
+	}
 }
